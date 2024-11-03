@@ -1,0 +1,38 @@
+#!/bin/bash
+clear
+function LTX() {
+echo -e "\e[5;36m  ————————————————————————————————————————\e[0m"
+}
+
+
+
+function Lunatix_Banner() {
+echo -e "\e[5;36m  ————————————————————————————————————————\e[0m"
+echo -e " \e[5;36m|\e[0;35m            X-Ray Managers    \e[0m          \e[5;36m|\e[0m"
+echo -e "\e[5;36m  ————————————————————————————————————————\e[0m"
+}
+
+
+function Menu_Features() {
+Lunatix_Banner
+echo -e " \e[5;36m |\e[0m \e[97;1m 1.) VLESS /XRAY/V2RAY MENU        \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m 2.) VMESS /XRAY/V2RAY MENU     \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m 3.) SDWSK /XRAY/V2RAY MENU       \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m 4.) TRJAN /XRAY/V2RAY MENU            \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m x.) Exit                            \e[5;36m|  \e[0m"
+LTX
+}
+
+
+Menu_Features
+
+
+# // Select Display
+read -p "   Just Input 1-4 or xx :  " Ltt
+case $Ltt in
+01 | 1) clear ; m-vle ;;
+02 | 2) clear ; m-vme ;;
+03 | 3) clear ; m-ssr ;;
+04 | 4) clear ; m-tro ;;
+*) exit ;;
+esac

@@ -1,0 +1,224 @@
+#!/bin/bash
+clear
+
+function checking_sc() {
+    MYIP=$(curl -sS ipv4.icanhazip.com)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/scriswan/lunaip/main/ip | awk '{print $4}')
+
+    if echo "$IZIN" | grep -wq "$MYIP"; then
+        echo "IZIN DITERIMA ANJING"
+    else
+        echo -e "\e[38;5;162m────────────────────────────────────────────\033[0m"
+        echo -e "\033[44m          404 NOT FOUND AUTOSCRIPT          \033[0m"
+        echo -e "\e[38;5;162m────────────────────────────────────────────\033[0m"
+        echo -e ""
+        echo -e "           \e[38;5;196mPERMISSION DENIED !\033[0m"
+        echo -e "  \033[0;36mYour VPS IP $MYIP has been banned.\033[0m"
+        echo -e "    \033[0;36mBuy access permissions for scripts.\033[0m"
+        echo -e "            \033[0;36mContact Admin :\033[0m"
+        echo -e "     \033[2;32mWhatsApp\033[0m wa.me/6281214726068"
+        echo -e "\e[38;5;162m────────────────────────────────────────────\033[0m"
+        exit 1  # Exit with non-zero status to indicate failure
+    fi
+}
+
+checking_sc
+clear
+
+
+
+
+
+
+# // Gettings Info
+
+
+######################################
+# // USERNAME IZIN IPP
+rm -f /usr/bin/user
+username=$(curl -sS https://raw.githubusercontent.com/scriswan/lunaip/main/ip | grep $MYIP | awk '{print $2}')
+echo "$username" >/usr/bin/user
+rm -f /usr/bin/e
+valid=$(curl -sS https://raw.githubusercontent.com/scriswan/lunaip/main/ip | grep $MYIP | awk '{print $3}')
+echo "$valid" > /usr/bin/e
+
+clear
+######################################
+# // DETAIL ORDER IZIN IP
+#username=$(cat /usr/bin/user)
+oid=$(cat /usr/bin/ver)
+exp=$(cat /usr/bin/e)
+######################################
+clear
+# // DAYS LEFT
+d1=$(date -d "$valid" +%s)
+d2=$(date -d "$today" +%s)
+#certifacate=$(((d1 - d2) / 86400))
+clear
+######################################
+# // GETTINGS SYSTEM
+ssh_service=$(/etc/init.d/ssh status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+
+dropbear_service=$(/etc/init.d/dropbear status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+
+haproxy_service=$(systemctl status haproxy | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+
+xray_service=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+
+nginx_service=$(systemctl status nginx | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+
+clear
+######################################
+# // RUNNING SSH
+######################################
+if [[ $ssh_service == "running" ]]; then 
+   status_ssh="\033[92;1mON${NC}"
+else
+   status_ssh="\033[91;1mOFF${NC} "
+fi
+######################################
+# // RUNNING WEBSOCKET
+######################################
+ssh_ws=$( systemctl status ws | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
+if [[ $ssh_ws == "running" ]]; then
+    status_ws_epro="\033[92;1mON${NC}"
+else
+    status_ws_epro="\033[91;1mOFF${NC} "
+fi
+######################################
+# RUNNING HAPROXY
+######################################
+if [[ $haproxy_service == "running" ]]; then 
+   status_haproxy="\033[92;1mON${NC}"
+else
+   status_haproxy="\033[91;1mOFF${NC} "
+fi
+######################################
+# RUNNING XRAY
+######################################
+if [[ $xray_service == "running" ]]; then 
+   status_xray="\033[92;1mON${NC}"
+else
+   status_xray="\033[91;1mOFF${NC} "
+fi
+######################################
+# RUNNING NGINX
+######################################
+if [[ $nginx_service == "running" ]]; then 
+   status_nginx="\033[92;1mON${NC}"
+else
+   status_nginx="\033[91;1mOFF${NC} "
+fi
+######################################
+# RUNNING DROPBEAR
+######################################
+if [[ $dropbear_service == "running" ]]; then 
+   status_dropbear="\033[92;1mGOO0D!${NC}"
+else
+   status_dropbear="\033[91;1mCRAZY${NC} "
+fi
+
+
+# // ADIJAYA-TUNNELING | LT PROJECT
+
+# Count total Account vmess
+vme_total=$(grep -E "^### " "/etc/xray/config.json" | sed -E 's/^### ([^ ]+).*/\1/' | awk '!seen[$0]++')
+VME=$(echo "$vme_total" | wc -l)
+
+
+# Count total Account vless
+vle_total=$(grep -E "^#& " "/etc/xray/config.json" | sed -E 's/^#& ([^ ]+).*/\1/' | awk '!seen[$0]++')
+VLE=$(echo "$vle_total" | wc -l)
+
+
+# Count total Account trojan
+tro_total=$(grep -E "^#! " "/etc/xray/config.json" | sed -E 's/^#! ([^ ]+).*/\1/' | awk '!seen[$0]++')
+TRO=$(echo "$tro_total" | wc -l)
+
+
+# Count total Account shadowsocks
+ssr_total=$(grep -E "^#!# " "/etc/xray/config.json" | sed -E 's/^#!# ([^ ]+).*/\1/' | awk '!seen[$0]++')
+SSR=$(echo "$ssr_total" | wc -l)
+
+
+# Count total Account noobzvpns
+nob_total=$(grep -E "^#nob# " "/etc/noobzvpns/.noobzvpns" | sed -E 's/^#nob# ([^ ]+).*/\1/' | awk '!seen[$0]++')
+NOB=$(echo "$nob_total" | wc -l)
+
+
+# Count total Account ssh openvpn
+ssh_total=$(grep -E "^#ssh# " "/etc/ssh/.ssh.db" | sed -E 's/^#ssh# ([^ ]+).*/\1/' | awk '!seen[$0]++')
+SSH=$(echo "$ssh_total" | wc -l)
+
+
+
+
+
+function cL(){
+clear
+}
+
+cL
+
+
+K="\e[0;33m"
+#C=\e[96;1m"
+G="\e[0;36m"
+W="\e[0;37m"
+reset="\e[0m"
+x="\e[0;32m"
+Kx="\e[0;35m"
+Gg="\e[92;1m"
+Ct="\e[41;1m"
+t="\e[97;1m"
+
+f="\e[0;36m"
+
+
+
+cL
+
+
+echo -e "${G}╭━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╮${reset}"
+echo -e "${G}│${reset}${Ct}              RISWAN VPN              ${G}│ ${reset}"
+echo -e "${G}╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯${reset}"
+
+
+echo -e "${G}╭━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╮${reset}"
+echo -e "${G}│${K} 1.) Ssh udp opnvpn                ${reset}"
+echo -e "${G}│${K} 2.) Vmess /xray/v2ray             ${reset}"
+echo -e "${G}│${K} 3.) Vless /xray/v2ray             ${reset}"
+echo -e "${G}│${K} 4.) trojan /xray/v2ray            ${reset}"
+echo -e "${G}│${K} 5.) sdwsok -Libev                 ${reset}"
+echo -e "${G}│${K} 6.) Noobz Vpns Base64             ${reset}"
+echo -e "${G}│${K} 7.) Themes Managers               ${reset}"
+echo -e "${G}│${K} 8.) Bot Telegram                  ${reset}"
+echo -e "${G}│${K} 9.) Features \ settings           ${reset}"
+echo -e "${G}╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯${reset}"
+echo -e "${f}              DAFTAR ACCOUNT            ${reset}"
+echo -e "${G}╭━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╮${reset}"
+echo -e "${G}│${Kx}       SSH/UDP    : $SSH    ${reset}"
+echo -e "${G}│${Kx}       VMESS      : $VME    ${reset}"
+echo -e "${G}│${Kx}       VLESS      : $VLE    ${reset}"
+echo -e "${G}│${Kx}       TROJAN     : $TRO    ${reset}"
+echo -e "${G}│${Kx}       Ssr-Libev  : $SSR    ${reset}"
+echo -e "${G}│${Kx}       NoobZvpns  : $NOB    ${reset}"
+echo -e "${G}╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯${reset}"
+
+echo -e "${G}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${reset}"
+echo -e "${W}SSH: $status_ssh | ${W}XRAY: $status_xray | ${W}NGINX: $status_nginx | $status_dropbear${reset}"
+echo -e "${G}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${reset}"
+echo ""
+read -p " Please Just Input Number : " ltx
+case $ltx in
+1) clear ; m-ssh ;;
+2) clear ; m-vme ;;
+3) clear ; m-vle ;;
+4) clear ; m-tro ;;
+5) clear ; m-ssr ;;
+6) clear ; m-nob ;;
+7) clear ; m-tme ;;
+8) clear ; m-bot ;;
+9) clear ; m-ftr ;;
+*) exit ;;
+esac

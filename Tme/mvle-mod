@@ -1,0 +1,50 @@
+#!/bin/bash
+clear
+
+function LTX() {
+echo -e "\e[5;36m  ————————————————————————————————————————\e[0m"
+}
+
+
+
+function Lunatix_Banner() {
+echo -e "\e[5;36m  ————————————————————————————————————————\e[0m"
+echo -e " \e[5;36m|\e[0;35m            Vless Managers    \e[0m          \e[5;36m|\e[0m"
+echo -e "\e[5;36m  ————————————————————————————————————————\e[0m"
+}
+
+
+function Menu_Features() {
+Lunatix_Banner
+echo -e " \e[5;36m |\e[0m \e[97;1m 1.) Create Vless Account Vpn        \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m 2.) Create Vless Triall Account     \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m 3.) Delete Vless Account Vpn        \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m 4.) Listed Vless Members            \e[5;36m|  \e[0m"
+
+echo -e " \e[5;36m |\e[0m \e[97;1m 5.) Renews Vless Account            \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m 6.) Change Vless Limit ip           \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m 7.) Change Vless Quota              \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m 8.) Detail Vless Account            \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m 9.) Monitor Vless Account           \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m x.) Exit                            \e[5;36m|  \e[0m"
+LTX
+}
+
+
+Menu_Features
+
+
+
+read -p "  Just Input 1-9 or xx :  " Ltt
+case $Ltt in
+01 | 1) clear ; add-vle ;;
+02 | 2) clear ; trial-vle ;;
+03 | 3) clear ; del-vle ;;
+04 | 4) clear ; member-vle ;;
+05 | 5) clear ; renew-vle ;;
+06 | 6) clear ; ganti-ip-vless ;;
+07 | 7) clear ; change-vless-qouta ;;
+08 | 8) clear ; user-vle ;;
+09 | 9) clear ; cek-vle ;;
+*) exit ;;
+esac

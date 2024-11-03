@@ -1,0 +1,145 @@
+#!/bin/bash
+# COLOR VALIDATION
+clear
+RED='\033[0;31m'
+NC='\033[0m'
+gray="\e[1;30m"
+Blue="\033[0;34m"
+green='\033[0;32m'
+grenbo="\e[92;1m"
+YELL='\033[0;33m'
+red() { echo -e "\\033[32;1m${*}\\033[0m"; }
+# Getting
+MYIP=$(curl -sS ipv4.icanhazip.com)
+echo -e "\e[32mloading...\e[0m"
+clear
+IP=$(wget -qO- icanhazip.com)
+dateToday=$(date +"%Y-%m-%d")
+Name=$(curl https://raw.githubusercontent.com/scriswan/lunaip/main/ip | grep $MYIP | awk '{print $2}')
+
+
+
+
+function LTX() {
+echo -e "\e[5;36m  ————————————————————————————————————————\e[0m"
+}
+
+
+
+
+function Lunatix_Banner() {
+echo -e "\e[5;36m  ————————————————————————————————————————\e[0m"
+echo -e " \e[5;36m|\e[0;35m         Settings Auto Backup  \e[0m         \e[5;36m|\e[0m"
+echo -e "\e[5;36m  ————————————————————————————————————————\e[0m"
+}
+
+
+function Menu_Features() {
+Lunatix_Banner
+echo -e " \e[5;36m |\e[0m \e[97;1m 1.) Backup Every 1 Hour [1 jam]     \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m 2.) Backup Every 2 Hour [2 jam]     \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m 3.) Backup Every 3 Hour [3 jam]     \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m 4.) Backup Every 4 Hour [4 jam]     \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m 5.) Backup Every 5 Hour [5 jam]     \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m 6.) Backup Every 6 Hour [6 jam]     \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m x.) Exit                            \e[5;36m|  \e[0m"
+LTX
+}
+
+Menu_Features
+
+
+read -p " Just Input : " gasgas
+case $gasgas in
+1)
+rm -rf /etc/cron.d/otwbackup
+sleep 2
+clear
+        echo "0 */1 * * * root /usr/local/sbin/otwbackup" >>/etc/cron.d/otwbackup
+        service cron restart >/dev/null 2>&1
+        service cron reload >/dev/null 2>&1
+ 
+        echo -e "\e[97;1m ============================= \e[0m"
+        echo -e "\e[97;1m   Autobackup Setiap :\e[92;1m 1 jam\e[0m"
+        echo -e "\e[97;1m ============================= \e[0m"
+        echo
+        read -n 1 -s -r -p "Press any key to back on Bot menu"
+        m-otw
+;;
+2)
+rm -rf /etc/cron.d/otwbackup
+sleep 2
+clear
+        echo "0 */2 * * * root /usr/local/sbin/otwbackup" >>/etc/cron.d/otwbackup
+        service cron restart >/dev/null 2>&1
+        service cron reload >/dev/null 2>&1
+        
+        echo -e "\e[97;1m ============================= \e[0m"
+        echo -e "\e[97;1m   Autobackup Setiap :\e[92;1m 2 jam\e[0m"
+        echo -e "\e[97;1m ============================= \e[0m"
+        echo
+        read -n 1 -s -r -p "Press any key to back on Bot menu"
+        m-otw
+;;
+3)
+rm -rf /etc/cron.d/otwbackup
+sleep 2
+clear
+        echo "0 */3 * * * root /usr/local/sbin/otwbackup" >>/etc/cron.d/otwbackup
+        service cron restart >/dev/null 2>&1
+        service cron reload >/dev/null 2>&1
+
+        echo -e "\e[97;1m ============================= \e[0m"
+        echo -e "\e[97;1m   Autobackup Setiap :\e[92;1m 3 jam\e[0m"
+        echo -e "\e[97;1m ============================= \e[0m"
+        echo
+        read -n 1 -s -r -p "Press any key to back on Bot menu"
+        m-otw
+;;
+4)
+rm -rf /etc/cron.d/otwbackup
+sleep 2
+clear
+        echo "0 */4 * * * root /usr/local/sbin/otwbackup" >>/etc/cron.d/otwbackup
+        service cron restart >/dev/null 2>&1
+        service cron reload >/dev/null 2>&1
+
+        echo -e "\e[97;1m ============================= \e[0m"
+        echo -e "\e[97;1m   Autobackup Setiap :\e[92;1m 4 jam\e[0m"
+        echo -e "\e[97;1m ============================= \e[0m"
+        echo
+        read -n 1 -s -r -p "Press any key to back on Bot menu"
+        m-otw
+;;
+5)
+rm -rf /etc/cron.d/otwbackup
+sleep 2
+clear
+        echo "0 */5 * * * root /usr/local/sbin/otwbackup" >>/etc/cron.d/otwbackup
+        service cron restart >/dev/null 2>&1
+        service cron reload >/dev/null 2>&1
+
+        echo -e "\e[97;1m ============================= \e[0m"
+        echo -e "\e[97;1m   Autobackup Setiap :\e[92;1m 5 jam\e[0m"
+        echo -e "\e[97;1m ============================= \e[0m"
+        echo
+        read -n 1 -s -r -p "Press any key to back on Bot menu"
+        m-otw
+;;
+6)
+rm -rf /etc/cron.d/otwbackup
+sleep 2
+clear
+        echo "0 */6 * * * root /usr/local/sbin/otwbackup" >>/etc/cron.d/otwbackup
+        service cron restart >/dev/null 2>&1
+        service cron reload >/dev/null 2>&1
+
+        echo -e "\e[97;1m ============================= \e[0m"
+        echo -e "\e[97;1m   Autobackup Setiap :\e[92;1m 6 jam\e[0m"
+        echo -e "\e[97;1m ============================= \e[0m"
+        echo
+        read -n 1 -s -r -p "Press any key to back on Bot menu"
+        m-otw
+;;
+*) exit ;;
+esac

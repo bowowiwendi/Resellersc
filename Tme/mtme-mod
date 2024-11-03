@@ -1,0 +1,173 @@
+#!/bin/bash
+clear
+function LTX() {
+echo -e "\e[5;36m  ————————————————————————————————————————\e[0m"
+}
+
+
+
+function Lunatix_Banner() {
+echo -e "\e[5;36m  ————————————————————————————————————————\e[0m"
+echo -e " \e[5;36m|\e[0;35m            Themes Managers    \e[0m         \e[5;36m|\e[0m"
+echo -e "\e[5;36m  ————————————————————————————————————————\e[0m"
+}
+
+
+function Menu_Features() {
+Lunatix_Banner
+echo -e " \e[5;36m |\e[0m \e[97;1m 1.) Fighter Tunnel Themes           \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m 2.) Lunatic Tunnel Themes           \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m 3.) Lunatic Tunnel Themes MOD       \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m 4.) Default                         \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m 5.) Exit                            \e[5;36m|  \e[0m"
+LTX
+}
+
+
+Menu_Features
+
+read -p " Just Input Number :" bro
+
+if [ $bro = 1 ] || [ $bro = 1 ]
+then
+# // Hapus File Lama
+rm -rf /usr/local/sbin/menu
+rm -rf /usr/local/sbin/m-ftr
+rm -rf /usr/local/sbin/welcome
+rm -rf /usr/local/sbin/FT
+# // Download File Baru
+wget -q -O /usr/local/sbin/menu "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/FT" && chmod 777 /usr/local/sbin/menu
+wget -q -O /usr/local/sbin/m-ssh "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mssh-default" && chmod 777 /usr/local/sbin/m-ssh
+wget -q -O /usr/local/sbin/m-vle "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mvle-default" && chmod 777 /usr/local/sbin/m-vle
+wget -q -O /usr/local/sbin/m-vme "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mvme-default" && chmod 777 /usr/local/sbin/m-vme
+wget -q -O /usr/local/sbin/m-ssr "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mssr-default" && chmod 777 /usr/local/sbin/m-ssr
+wget -q -O /usr/local/sbin/m-nob "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mnob-default" && chmod 777 /usr/local/sbin/m-nob
+wget -q -O /usr/local/sbin/m-bkp "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mbkp-default" && chmod 777 /usr/local/sbin/m-bkp
+wget -q -O /usr/local/sbin/m-bot "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mbot-default" && chmod 777 /usr/local/sbin/m-bot
+wget -q -O /usr/local/sbin/m-tme "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mtme-default" && chmod 777 /usr/local/sbin/m-tme
+menu
+fi
+
+
+if [ $bro = 2 ] || [ $bro = 2 ]
+then
+# // Hapus File Lama
+rm -rf /usr/local/sbin/menu
+rm -rf /usr/local/sbin/m-ftr
+rm -rf /usr/local/sbin/welcome
+rm -rf /usr/local/sbin/LTX
+rm -rf /usr/local/sbin/WELTX
+rm -rf /usr/local/sbin/FEATUR
+rm -rf /usr/local/sbin/mssh-mod
+rm -rf /usr/local/sbin/mbkp-mod
+rm -rf /usr/local/sbin/mvle-mod
+rm -rf /usr/local/sbin/mvme-mod
+rm -rf /usr/local/sbin/mbot-mod
+rm -rf /usr/local/sbin/mftr-mod
+rm -rf /usr/local/sbin/mssr-mod
+rm -rf /usr/local/sbin/mxry-mod
+rm -rf /usr/local/sbin/mtro-mod
+rm -rf /usr/local/sbin/motw-mod
+# // Download File Baru
+wget -q -O /usr/local/sbin/menu "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/LTX" && chmod 777 /usr/local/sbin/menu
+wget -q -O /usr/local/sbin/welcome "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/WELTX" && chmod 777 /usr/local/sbin/welcome
+wget -q -O /usr/local/sbin/m-ftr "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/FEATUR" && chmod 777 /usr/local/sbin/m-ftr
+wget -q -O /usr/local/sbin/m-ssh "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mssh-default" && chmod 777 /usr/local/sbin/m-ssh
+wget -q -O /usr/local/sbin/m-vle "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mvle-default" && chmod 777 /usr/local/sbin/m-vle
+wget -q -O /usr/local/sbin/m-vme "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mvme-default" && chmod 777 /usr/local/sbin/m-vme
+wget -q -O /usr/local/sbin/m-ssr "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mssr-degault" && chmod 777 /usr/local/sbin/m-ssr
+wget -q -O /usr/local/sbin/m-nob "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mnob-default" && chmod 777 /usr/local/sbin/m-nob
+wget -q -O /usr/local/sbin/m-bkp "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mbkp-default" && chmod 777 /usr/local/sbin/m-bkp
+wget -q -O /usr/local/sbin/m-bot "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mbot-default" && chmod 777 /usr/local/sbin/m-bot
+wget -q -O /usr/local/sbin/m-tme "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mtme-default" && chmod 777 /usr/local/sbin/m-tme
+wget -q -O /usr/local/sbin/m-tro "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mtro-default" && chmod 777 /usr/local/sbin/m-tro
+welcome
+fi
+
+
+if [ $bro = 3 ] || [ $bro = 3 ]
+then
+# // Hapus File Lama
+rm -rf /usr/local/sbin/wel-mod
+rm -rf /usr/local/sbin/menu-mod
+rm -rf /usr/local/sbin/ftr-mod
+rm -rf /usr/local/sbin/menu
+rm -rf /usr/local/sbin/m-ftr
+rm -rf /usr/local/sbin/welcome
+rm -rf /usr/local/sbin/LTX
+rm -rf /usr/local/sbin/WELTX
+rm -rf /usr/local/sbin/FEATUR
+rm -rf /usr/local/sbin/m-ssh
+rm -rf /usr/local/sbin/m-bkp
+rm -rf /usr/local/sbin/m-vle
+rm -rf /usr/local/sbin/m-vme
+rm -rf /usr/local/sbin/m-ssr
+rm -rf /usr/local/sbin/m-nob
+rm -rf /usr/local/sbin/m-ftr
+rm -rf /usr/local/sbin/m-xry
+rm -rf /usr/local/sbin/mssh-mod
+rm -rf /usr/local/sbin/mbkp-mod
+rm -rf /usr/local/sbin/mvle-mod
+rm -rf /usr/local/sbin/mvme-mod
+rm -rf /usr/local/sbin/mbot-mod
+rm -rf /usr/local/sbin/mftr-mod
+rm -rf /usr/local/sbin/mssr-mod
+rm -rf /usr/local/sbin/mxry-mod
+rm -rf /usr/local/sbin/mtro-mod
+# // Download File Baru
+wget -q -O /usr/local/sbin/menu "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/menu-mod" && chmod 777 /usr/local/sbin/menu
+wget -q -O /usr/local/sbin/welcome "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/wel-mod" && chmod 777 /usr/local/sbin/welcome
+wget -q -O /usr/local/sbin/m-ftr "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mftr-mod" && chmod 777 /usr/local/sbin/m-ftr
+wget -q -O /usr/local/sbin/m-ssh "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mssh-mod" && chmod 777 /usr/local/sbin/m-ssh
+wget -q -O /usr/local/sbin/m-vle "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mvle-mod" && chmod 777 /usr/local/sbin/m-vle
+wget -q -O /usr/local/sbin/m-vme "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mvme-mod" && chmod 777 /usr/local/sbin/m-vme
+wget -q -O /usr/local/sbin/m-ssr "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mssr-mod" && chmod 777 /usr/local/sbin/m-ssr
+wget -q -O /usr/local/sbin/m-nob "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mnob-mod" && chmod 777 /usr/local/sbin/m-nob
+wget -q -O /usr/local/sbin/m-bkp "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mbkp-mod" && chmod 777 /usr/local/sbin/m-bkp
+wget -q -O /usr/local/sbin/m-bot "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mbot-mod" && chmod 777 /usr/local/sbin/m-bot
+wget -q -O /usr/local/sbin/m-tro "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mtro-mod" && chmod 777 /usr/local/sbin/m-tro
+wget -q -O /usr/local/sbin/m-otw "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/motw-mod" && chmod 777 /usr/local/sbin/m-otw
+welcome
+fi
+
+
+if [ $bro = 4 ] || [ $bro = 4 ]
+then
+# // hapus File lama
+rm -rf /usr/local/sbin/menu
+rm -rf /usr/local/sbin/welcome
+rm -rf /usr/local/sbin/m-ftr
+rm -rf /usr/local/sbin/menu-default
+rm -rf /usr/local/sbin/wel-default
+rm -rf /usr/local/sbin/ftr-default
+rm -rf /usr/local/sbin/wel-mod
+rm -rf /usr/local/sbin/menu-mod
+rm -rf /usr/local/sbin/ftr-mod
+rm -rf /usr/local/sbin/mssh-mod
+rm -rf /usr/local/sbin/mbkp-mod
+rm -rf /usr/local/sbin/mvle-mod
+rm -rf /usr/local/sbin/mvme-mod
+rm -rf /usr/local/sbin/mbot-mod
+rm -rf /usr/local/sbin/mftr-mod
+rm -rf /usr/local/sbin/mssr-mod
+rm -rf /usr/local/sbin/mtro-mod
+rm -rf /usr/local/sbin/motw-mod
+# // Download File Baru / default
+wget -q -O /usr/local/sbin/menu "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/menu-default" && chmod 777 /usr/local/sbin/menu
+wget -q -O /usr/local/sbin/welcome "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/wel-default" && chmod 777 /usr/local/sbin/welcome
+wget -q -O /usr/local/sbin/m-ftr "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mftr-default" && chmod 777 /usr/local/sbin/m-ftr
+wget -q -O /usr/local/sbin/m-ssh "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mssh-default" && chmod 777 /usr/local/sbin/m-ssh
+wget -q -O /usr/local/sbin/m-vle "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mvle-default" && chmod 777 /usr/local/sbin/m-vle
+wget -q -O /usr/local/sbin/m-vme "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mvme-default" && chmod 777 /usr/local/sbin/m-vme
+wget -q -O /usr/local/sbin/m-ssr "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mssr-default" && chmod 777 /usr/local/sbin/m-ssr
+wget -q -O /usr/local/sbin/m-nob "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mnob-default" && chmod 777 /usr/local/sbin/m-nob
+wget -q -O /usr/local/sbin/m-bkp "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mbkp-default" && chmod 777 /usr/local/sbin/m-bkp
+wget -q -O /usr/local/sbin/m-bot "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mbot-default" && chmod 777 /usr/local/sbin/m-bot
+wget -q -O /usr/local/sbin/m-tro "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/mtro-default" && chmod 777 /usr/local/sbin/m-tro
+wget -q -O /usr/local/sbin/m-otw "https://raw.githubusercontent.com/Garut-SisiBukit/zexcex/main/Tme/motw-default" && chmod 777 /usr/local/sbin/m-otw
+welcome
+fi
+if [ $bro = 5 ] || [ $bro = 5 ]
+then
+exit
+fi

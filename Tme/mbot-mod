@@ -1,0 +1,74 @@
+#!/bin/bash
+clear
+# // color format 38
+CC='\e[38;5;14m'  # 
+LO='\e[38;5;162m' # PURPLE HACKER
+UK='\e[38;5;99m'  # UNGU KOLOT
+BK='\e[38;5;196m' # BEREM KOLOT 
+R1='\e[38;5;155m' # HEJO SEMU BODAS
+R2='\e[38;5;49m'  # HEJO LIME / APEL
+BC='\e[38;5;195m' # BODAS CERAH PISAN
+HU='\e[38;5;115m' # HEJO SEMU ABU
+UB='\e[38;5;147m' # UNGU KABODASAN
+KT='\e[38;5;187m' # KONENG TARIGU
+# // color fromat 5 
+BlueCyan='\e[5;36m'
+WhiteBe='\e[5;37m'
+GreenBe='\e[5;32m'
+Xark='\e[0m'
+
+cybervpn_service=$(systemctl status cybervpn | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+
+# STATUS SERVICE  SQUID 
+if [[ $cybervpn_service == "running" ]]; then 
+   status_cybervpn=" ${R1}[ ON ]\e[0m"
+else
+   status_cybervpn=" ${BK}[ OF ]\e[0m"
+fi
+
+
+
+BC="\e[5;36m"
+Xark="\e[0m"
+PP="\e[0;35m"
+CN="\e[0;36m"
+OG="\e[0;33m"
+Xark="\e[0m"
+
+function LTX() {
+echo -e "\e[5;36m  ————————————————————————————————————————\e[0m"
+}
+
+
+
+function Lunatix_Banner() {
+echo -e "\e[5;36m  ————————————————————————————————————————\e[0m"
+echo -e " \e[5;36m|\e[0;35m               Telegram Bot   \e[0m          \e[5;36m|\e[0m"
+echo -e "\e[5;36m  ————————————————————————————————————————\e[0m"
+}
+
+
+function Menu_Features() {
+Lunatix_Banner
+echo -e " \e[5;36m |\e[0m \e[97;1m[*] BOT STATUS: ${status_cybervpn}              \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m1.) Setup Telegram Bot Vpn           \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m2.) Delete Telegram Bot Vpn          \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m3.) Restart Telegram Bot             \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m4.) Change Id & Key Bot              \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1mx.) Exit                             \e[5;36m|  \e[0m"
+LTX
+}
+
+
+
+
+Menu_Features
+read -p "  just Input 1-4 or x :  "  opt
+echo -e   ""
+case $opt in
+01 | 1) clear ; wget https://raw.githubusercontent.com/scriswan/v1/main/Bot/bot.sh && chmod +x bot.sh && ./bot.sh ;;
+02 | 2) clear ; systemctl stop cybervpn && m-bot ;;
+03 | 3) clear ; systemctl restart cybervpn && m-bot ;;
+04 | 4) clear ; nano /root/cybervpn/var.txt ;;
+*) clear ; menu ;;
+esac

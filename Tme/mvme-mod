@@ -1,0 +1,47 @@
+#!/bin/bash
+
+clear
+function LTX() {
+echo -e "\e[5;36m  ————————————————————————————————————————\e[0m"
+}
+
+
+
+function Lunatix_Banner() {
+echo -e "\e[5;36m  ————————————————————————————————————————\e[0m"
+echo -e " \e[5;36m|\e[0;35m            Vmess Managers    \e[0m          \e[5;36m|\e[0m"
+echo -e "\e[5;36m  ————————————————————————————————————————\e[0m"
+}
+
+
+function Menu_Features() {
+Lunatix_Banner
+echo -e " \e[5;36m |\e[0m \e[97;1m 1.) Create Vmess Account Vpn        \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m 2.) Create Vmess Triall Account     \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m 3.) Delete Vmess Account Vpn        \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m 4.) Listed Vmess Members            \e[5;36m|  \e[0m"
+
+echo -e " \e[5;36m |\e[0m \e[97;1m 5.) Renews Vmess Account            \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m 6.) Monitor Vmess Account           \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m 7.) Change Vmess Quota              \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m 8.) Change Vmess Limit Ip           \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m 9.) Detail Vmess Account            \e[5;36m|  \e[0m"
+echo -e " \e[5;36m |\e[0m \e[97;1m x.) Exit                            \e[5;36m|  \e[0m"
+LTX
+}
+
+
+# // Select Display
+read -p "  Just Input 1-9 or x :  " Ltt
+case $Ltt in
+01 | 1) clear ; add-vme ;;
+02 | 2) clear ; trial-vme ;;
+03 | 3) clear ; del-vme ;;
+04 | 4) clear ; member-vme ;;
+05 | 5) clear ; renew-vme ;;
+06 | 6) clear ; cek-vme ;;
+07 | 7) clear ; change-limit-qouta ;;
+08 | 8) clear ; ganti-ip-vmess ;;
+09 | 9) clear ; user-vme ;;
+*) exit ;;
+esac
